@@ -50,60 +50,6 @@ export const loginUsuario = async (req, res) => {
 
 export const getUsuarios = async (req, res) => {
     try {
-        //const query = `
-        //    ALTER TABLE usuarios
-        //    ADD COLUMN IF NOT EXISTS correo VARCHAR(150);
-        //`;
-        //await pool.query(query);
-        //const query = `
-        //    ALTER TABLE usuarios
-        //    ADD COLUMN IF NOT EXISTS password VARCHAR(255);
-        //`;
-        //await pool.query(query);
-
-        //const query = `
-        //    UPDATE usuarios
-        //        SET password = 'mi_clave_123'
-        //        WHERE cedula = '1001001001';
-        //`;
-        //await pool.query(query);
-
-        //const query = `
-        //    UPDATE usuarios
-        //    SET correo = $1
-        //    WHERE cedula = $2
-        //`;
-        //const values = ['correo@dominio.com', '1001001001'];
-        //const result = await pool.query(query, values);
-
-        //const query = `
-        //    ALTER TABLE autos
-        //    ADD COLUMN IF NOT EXISTS marca VARCHAR(50);
-        //`;
-        //await pool.query(query);
-
-        //const query = `
-        //    CREATE TABLE IF NOT EXISTS autos (
-        //        placa  VARCHAR(10) PRIMARY KEY,
-        //        image  VARCHAR(255),       -- URL o path de la imagen
-        //        modelo VARCHAR(50) NOT NULL,
-        //        color  VARCHAR(30),
-        //        ano    INT,
-        //        costo  NUMERIC(12,2),
-        //        estado VARCHAR(20) DEFAULT 'DISPONIBLE',
-        //        valor  NUMERIC(12,2)
-        //    );`;
-
-        //const query = `
-        //    UPDATE autos
-        //    SET modelo = $1
-        //    WHERE placa = $2
-        //`;
-        //const values = ['Hilux', 'LVK666'];
-        //const result = await pool.query(query, values);
-
-        //await pool.query(query);
-
         const result = await pool.query("SELECT * FROM usuarios");
         res.json(result.rows);
     } catch (err) {
